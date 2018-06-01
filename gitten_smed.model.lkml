@@ -14,3 +14,5 @@ datagroup: gitten_smed_default_datagroup {
 persist_with: gitten_smed_default_datagroup
 
 explore: users {}
+
+explore: content_view {}
