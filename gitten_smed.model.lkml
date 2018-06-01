@@ -16,3 +16,5 @@ persist_with: gitten_smed_default_datagroup
 explore: users {}
 
 explore: content_view {}
+
+explore: artifact {}
