@@ -22,6 +22,11 @@ view: active_derived_table {
     sql: ${TABLE}.DEAD_AT ;;
   }
 
+  dimension: testnumber {
+    type: number
+    sql:  7  ;;
+  }
+
   dimension: dev_mode {
     type: number
     sql: ${TABLE}.DEV_MODE ;;
