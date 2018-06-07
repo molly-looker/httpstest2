@@ -24,7 +24,7 @@ view: active_derived_table {
 
   dimension: testnumber {
     type: number
-    sql:  15  ;;
+    sql:  16  ;;
   }
 
   dimension: dev_mode {
