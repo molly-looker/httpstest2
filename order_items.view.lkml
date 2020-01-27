@@ -1,5 +1,6 @@
 view: order_items {
-  sql_table_name: demo_db.order_items ;;
+
+  sql_table_name: public.order_items ;;
 
   dimension: id {
     primary_key: yes
@@ -7,10 +8,9 @@ view: order_items {
     sql: ${TABLE}.id ;;
   }
 
-  dimension: inventory_item_id {
+  dimension: amount {
     type: number
-    # hidden: yes
-    sql: ${TABLE}.inventory_item_id ;;
+    sql: ${TABLE}.amount ;;
   }
 
   dimension: order_id {
@@ -19,27 +19,14 @@ view: order_items {
     sql: ${TABLE}.order_id ;;
   }
 
-  dimension_group: returned {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.returned_at ;;
-  }
-
-  dimension: sale_price {
+  dimension: sku_num {
     type: number
-    sql: ${TABLE}.sale_price ;;
+    sql: ${TABLE}.sku_num ;;
   }
 
   measure: count {
     type: count
-    drill_fields: [id, inventory_items.id, orders.id]
+    drill_fields: [id, orders.id]
+
   }
 }

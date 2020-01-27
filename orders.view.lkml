@@ -1,5 +1,6 @@
 view: orders {
-  sql_table_name: demo_db.orders ;;
+
+  sql_table_name: public.orders ;;
 
   dimension: id {
     primary_key: yes
@@ -21,6 +22,11 @@ view: orders {
     sql: ${TABLE}.created_at ;;
   }
 
+  dimension: order_amount {
+    type: number
+    sql: ${TABLE}.order_amount ;;
+  }
+
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
@@ -34,6 +40,7 @@ view: orders {
 
   measure: count {
     type: count
-    drill_fields: [id, users.first_name, users.last_name, users.id, order_items.count]
+    drill_fields: [id, users.id, users.name, order_items.count]
+
   }
 }
